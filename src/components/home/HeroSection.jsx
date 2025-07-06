@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
+import EmailCaptureInline from '../EmailCaptureInline';
 
 const { FiTarget, FiPlay } = FiIcons;
 
@@ -21,11 +22,10 @@ const HeroSection = () => {
             <h1 className="text-4xl lg:text-6xl font-bold font-inter leading-tight mb-6">
               AI Enablement for Small Media Companies Who Want to Control Their Own Destiny
             </h1>
-            
             <p className="text-xl lg:text-2xl font-open-sans mb-8 opacity-90 leading-relaxed">
               Simple AI frameworks, not complex systems. Guy Tasaka teaches small media companies to harness their biggest advantage: speed. While enterprise media faces implementation challenges, new AI-native entrepreneurs are entering local markets. You can move faster than both.
             </p>
-            
+
             {/* Trust Indicators */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -41,13 +41,13 @@ const HeroSection = () => {
                 Up to 3 companies share $3,500 training • Only 5 partnerships at a time
               </div>
             </motion.div>
-            
+
             {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 mb-8"
             >
               <button className="bg-energy-orange hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center gap-2">
                 <SafeIcon icon={FiPlay} className="w-5 h-5" />
@@ -60,8 +60,23 @@ const HeroSection = () => {
                 Apply for Partnership
               </Link>
             </motion.div>
+
+            {/* Email Capture */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <EmailCaptureInline
+                variant="hero"
+                title="Get AI Framework Updates"
+                subtitle="Join 500+ media executives getting practical AI insights"
+                buttonText="Get Free Updates"
+                className="max-w-lg"
+              />
+            </motion.div>
           </motion.div>
-          
+
           {/* Right Column - Hero Visual */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -78,7 +93,7 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Floating partnership indicator */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}

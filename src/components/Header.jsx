@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const { FiMenu, FiX } = FiIcons;
+const { FiMenu, FiX, FiSettings } = FiIcons;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,8 +52,16 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center space-x-3">
+            <Link
+              to="/admin"
+              className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+              title="Admin Panel"
+            >
+              <SafeIcon icon={FiSettings} className="w-4 h-4" />
+              <span className="text-sm">Admin</span>
+            </Link>
             <Link
               to="/partnership"
               className="bg-energy-orange hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105"
@@ -98,6 +106,14 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+            <Link
+              to="/admin"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center space-x-2 text-gray-700 hover:text-trust-blue transition-colors"
+            >
+              <SafeIcon icon={FiSettings} className="w-4 h-4" />
+              <span>Admin Panel</span>
+            </Link>
             <Link
               to="/partnership"
               onClick={() => setIsMenuOpen(false)}
